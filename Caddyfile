@@ -1,0 +1,4 @@
+0.0.0.0:8080 {
+    root /opt/tlm/nichelfy_web/web/
+    index index.html
+}
