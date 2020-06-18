@@ -18,7 +18,7 @@ FROM quay.io/spivegin/tlmbasedebian
 RUN mkdir /opt/bin
 WORKDIR /opt/tlm/
 ADD Caddyfile /opt/tlm/
-COPY --from=git /opt/tlm/nichelfy/gcx_grand/release/ /opt/tlm/nichelfy_web
+COPY --from=git /opt/tlm/nichelfy/gcx_nichelfy/release/ /opt/tlm/nichelfy_web
 COPY --from=caddy_only /opt/bin/caddy /opt/bin/caddy
 RUN chmod +x /opt/bin/caddy && ln -s /opt/bin/caddy /bin/caddy
 CMD ["caddy", "-conf", "/opt/tlm/Caddyfile"]
