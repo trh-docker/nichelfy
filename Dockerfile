@@ -9,7 +9,7 @@ RUN git config --global url.git@github.com:.insteadOf https://github.com/ &&\
     git config --global url.git@gitlab.com:.insteadOf https://gitlab.com/ &&\
     git config --global url."https://${deploy}@sc.tpnfc.us/".insteadOf "https://sc.tpnfc.us/"
 
-RUN git clone git@gitlab.com:nichelfy/nichelfy.git &&\
+RUN git clone https://sc.tpnfc.us/nichelfy/nichelfy.com.git nichelfy &&\
     cd nichelfy/gcx_grand && pub get &&\
     pub run build_runner build -r --delete-conflicting-outputs -o release 
 
