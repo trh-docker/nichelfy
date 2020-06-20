@@ -10,7 +10,7 @@ RUN git config --global url.git@github.com:.insteadOf https://github.com/ &&\
     git config --global url."https://${deploy}@sc.tpnfc.us/".insteadOf "https://sc.tpnfc.us/"
 
 RUN git clone https://sc.tpnfc.us/nichelfy/nichelfy.com.git nichelfy &&\
-    cd nichelfy/gcx_nichelfy && pub get &&\
+    cd nichelfy/store && pub get &&\
     pub run build_runner build -r --delete-conflicting-outputs -o release 
 
 
@@ -18,7 +18,7 @@ FROM quay.io/spivegin/tlmbasedebian
 RUN mkdir /opt/bin
 WORKDIR /opt/tlm/
 ADD Caddyfile /opt/tlm/
-COPY --from=git /opt/tlm/nichelfy/gcx_nichelfy/release/ /opt/tlm/nichelfy_web
+COPY --from=git /opt/tlm/nichelfy/store/release/ /opt/tlm/nichelfy_web
 COPY --from=caddy_only /opt/bin/caddy /opt/bin/caddy
 RUN chmod +x /opt/bin/caddy && ln -s /opt/bin/caddy /bin/caddy
 CMD ["caddy", "-conf", "/opt/tlm/Caddyfile"]
