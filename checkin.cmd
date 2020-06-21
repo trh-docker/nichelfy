@@ -1,3 +1,3 @@
 git add -A
-git commit -m "alpha deploy bb4f3fb..bf09ce6  "
+git commit -m "alpha deploy bf09ce6..52bc2e6 "
 git push
