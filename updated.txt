@@ -1,1 +1,2 @@
 v0.0.1 fist build
+v0.0.2 alpha build bb4f3fb..bf09ce6 
